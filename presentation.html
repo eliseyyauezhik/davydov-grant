@@ -628,6 +628,172 @@
             display: inline-block;
             border: 1px solid #fed7aa;
         }
+
+        /* =======================================================
+           9. MOBILE RESPONSIVENESS
+           ======================================================= */
+        @media (max-width: 1300px) {
+            .slide-container {
+                width: 95%;
+                height: auto;
+                min-height: 720px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .logos-header {
+                position: static;
+                margin-bottom: 30px;
+                flex-wrap: wrap;
+            }
+
+            .block-marker {
+                position: static;
+                margin-top: 20px;
+                text-align: right;
+            }
+
+            .slide-container.bleed-image-layout {
+                grid-template-columns: 1fr;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .slide-container.bleed-image-layout>.content-container {
+                padding: 40px;
+                height: auto;
+                order: 2;
+            }
+
+            .slide-container.bleed-image-layout>.image-container {
+                height: 300px;
+                order: 1;
+            }
+
+            .slide-container.bleed-image-layout img.bleed-image-side {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 0;
+                gap: 20px;
+            }
+
+            .slide-container {
+                width: 100%;
+                border-radius: 0;
+                padding: 30px 20px;
+                min-height: auto;
+            }
+
+            .logos-header {
+                justify-content: flex-start;
+                gap: 10px;
+            }
+
+            .logos-header .logo-box {
+                padding: 0 12px;
+                height: 50px;
+            }
+
+            .logos-header .logo-box img {
+                height: 30px !important;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .slide-title {
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+
+            .subtitle {
+                font-size: 18px !important;
+            }
+
+            h3 {
+                font-size: 20px !important;
+            }
+
+            p,
+            li {
+                font-size: 16px !important;
+            }
+
+            .two-column,
+            .tiled-content,
+            .tiled-content.three-cols,
+            .comparison-layout {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                height: auto;
+            }
+
+            .five-grid {
+                flex-direction: column;
+            }
+
+            .five-grid .tile,
+            .five-grid .tile.wide {
+                width: 100%;
+            }
+
+            .bullet-list.two-col-list ul {
+                grid-template-columns: 1fr;
+            }
+
+            .bullet-list li {
+                padding: 15px 15px 15px 50px;
+            }
+
+            .bullet-list i {
+                left: 15px;
+                top: 17px;
+                font-size: 20px;
+            }
+
+            .tiled-images-layout {
+                flex-direction: column;
+            }
+
+            .highlight-layout {
+                padding: 30px 20px;
+            }
+
+            .highlight-layout h2 {
+                font-size: 28px;
+            }
+
+            .budget-bar-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .budget-label {
+                width: 100%;
+                text-align: left;
+                font-size: 16px;
+            }
+
+            .qa-layout h2 {
+                font-size: 36px;
+            }
+
+            .qa-layout p {
+                font-size: 18px;
+            }
+
+            /* Background blobs inside container */
+            .bg-blob {
+                opacity: 0.2;
+            }
+        }
     </style>
 </head>
 
