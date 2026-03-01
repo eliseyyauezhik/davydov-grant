@@ -836,110 +836,85 @@
     <div class="slide-container" id="slideNav">
         <div class="bg-blob blob-blue"></div>
         <div class="bg-blob blob-orange"></div>
-        <h2 class="slide-title" style="text-align: center; font-size: 36px; margin-bottom: 40px;">Структура презентации
+        <h2 class="slide-title" style="text-align: center; font-size: 34px; margin-bottom: 20px;">Структура презентации
         </h2>
-        <div class="content-area" style="justify-content: center;">
+        <div class="content-area" style="justify-content: center; padding: 10px 60px;">
             <div
-                style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 24px; width: 100%;">
+                style="display: grid !important; grid-template-columns: 1fr 1fr !important; grid-template-rows: 1fr 1fr !important; gap: 20px !important; width: 100%; flex-direction: unset !important; height: auto;">
                 <!-- Плашка 1: Актуальные потребности -->
-                <a href="#slide5" style="text-decoration: none; color: inherit;">
-                    <div class="tile"
-                        style="cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; border-left: 5px solid #ea580c; min-height: 230px;"
-                        onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.08)';"
-                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.03)';">
-                        <div class="icon-wrap">
-                            <div class="icon" style="color: #ea580c; background: #fff7ed;"><i
-                                    class="fa-solid fa-bullseye"></i></div>
-                            <h3 style="color: #ea580c;">Актуальные потребности</h3>
+                <a href="#slide5" style="text-decoration: none; color: inherit; display: flex;">
+                    <div style="cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; border-left: 5px solid #ea580c; background: white; border-radius: 16px; padding: 24px 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); width: 100%;"
+                        onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 25px rgba(0,0,0,0.08)';"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.04)';">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                            <div
+                                style="width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #ea580c; background: #fff7ed; font-size: 18px; flex-shrink: 0;">
+                                <i class="fa-solid fa-bullseye"></i></div>
+                            <h3 style="color: #ea580c; margin: 0; font-size: 20px;">Актуальные потребности</h3>
                         </div>
-                        <p style="font-size: 14px; line-height: 1.6; color: #64748b;">
-                            <a href="#slide2"
-                                style="color: #64748b; text-decoration: none; border-bottom: 1px dotted #94a3b8;">Основные
-                                понятия</a> ·
-                            <a href="#slide5"
-                                style="color: #64748b; text-decoration: none; border-bottom: 1px dotted #94a3b8;">Гимназия
-                                сегодня</a> ·
-                            <a href="#slide6"
-                                style="color: #64748b; text-decoration: none; border-bottom: 1px dotted #94a3b8;">Гимназия
-                                в 2035</a>
+                        <p style="font-size: 13px; line-height: 1.6; color: #64748b; margin: 0;">
+                            <span style="border-bottom: 1px dotted #94a3b8;">Основные понятия</span> ·
+                            <span style="border-bottom: 1px dotted #94a3b8;">Гимназия сегодня</span> ·
+                            <span style="border-bottom: 1px dotted #94a3b8;">Гимназия в 2035</span>
                         </p>
                     </div>
                 </a>
 
                 <!-- Плашка 2: Конъюнктура -->
-                <a href="#slide3" style="text-decoration: none; color: inherit;">
-                    <div class="tile"
-                        style="cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; border-left: 5px solid #0284c7; min-height: 230px;"
-                        onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.08)';"
-                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.03)';">
-                        <div class="icon-wrap">
-                            <div class="icon" style="color: #0284c7; background: #f0f9ff;"><i
-                                    class="fa-solid fa-chart-line"></i></div>
-                            <h3 style="color: #0284c7;">Конъюнктура</h3>
+                <a href="#slide3" style="text-decoration: none; color: inherit; display: flex;">
+                    <div style="cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; border-left: 5px solid #0284c7; background: white; border-radius: 16px; padding: 24px 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); width: 100%;"
+                        onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 25px rgba(0,0,0,0.08)';"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.04)';">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                            <div
+                                style="width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #0284c7; background: #f0f9ff; font-size: 18px; flex-shrink: 0;">
+                                <i class="fa-solid fa-chart-line"></i></div>
+                            <h3 style="color: #0284c7; margin: 0; font-size: 20px;">Конъюнктура</h3>
                         </div>
-                        <p style="font-size: 14px; line-height: 1.6; color: #64748b;">
-                            <a href="#slide3"
-                                style="color: #64748b; text-decoration: none; border-bottom: 1px dotted #94a3b8;">Как ИИ
-                                меняет образование</a> ·
-                            <a href="#slide4"
-                                style="color: #64748b; text-decoration: none; border-bottom: 1px dotted #94a3b8;">Инструменты
-                                ИИ</a> ·
-                            <a href="#slideOpportunities"
-                                style="color: #64748b; text-decoration: none; border-bottom: 1px dotted #94a3b8;">ИИ-Перспективы</a>
+                        <p style="font-size: 13px; line-height: 1.6; color: #64748b; margin: 0;">
+                            <span style="border-bottom: 1px dotted #94a3b8;">Как ИИ меняет образование</span> ·
+                            <span style="border-bottom: 1px dotted #94a3b8;">Инструменты ИИ</span> ·
+                            <span style="border-bottom: 1px dotted #94a3b8;">ИИ-Перспективы</span>
                         </p>
                     </div>
                 </a>
 
                 <!-- Плашка 3: Варианты решений -->
-                <a href="#slideSolutions" style="text-decoration: none; color: inherit;">
-                    <div class="tile"
-                        style="cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; border-left: 5px solid #8b5cf6; min-height: 230px;"
-                        onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.08)';"
-                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.03)';">
-                        <div class="icon-wrap">
-                            <div class="icon" style="color: #8b5cf6; background: #f5f3ff;"><i
-                                    class="fa-solid fa-lightbulb"></i></div>
-                            <h3 style="color: #8b5cf6;">Варианты решений</h3>
+                <a href="#slideSolutions" style="text-decoration: none; color: inherit; display: flex;">
+                    <div style="cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; border-left: 5px solid #8b5cf6; background: white; border-radius: 16px; padding: 24px 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); width: 100%;"
+                        onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 25px rgba(0,0,0,0.08)';"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.04)';">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                            <div
+                                style="width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #8b5cf6; background: #f5f3ff; font-size: 18px; flex-shrink: 0;">
+                                <i class="fa-solid fa-lightbulb"></i></div>
+                            <h3 style="color: #8b5cf6; margin: 0; font-size: 20px;">Варианты решений</h3>
                         </div>
-                        <p style="font-size: 14px; line-height: 1.6; color: #64748b;">
-                            <a href="#slideSolutions"
-                                style="color: #64748b; text-decoration: none; border-bottom: 1px dotted #94a3b8;">Темы
-                                гранта</a> ·
-                            <a href="#slide11_3"
-                                style="color: #64748b; text-decoration: none; border-bottom: 1px dotted #94a3b8;">ИИ-тьютор
-                                по физике</a> ·
-                            <a href="#slide12_1"
-                                style="color: #64748b; text-decoration: none; border-bottom: 1px dotted #94a3b8;">Субъектность
-                                в цифровой среде</a> ·
-                            <a href="#slide12_5"
-                                style="color: #64748b; text-decoration: none; border-bottom: 1px dotted #94a3b8;">Эксперимент</a>
+                        <p style="font-size: 13px; line-height: 1.6; color: #64748b; margin: 0;">
+                            <span style="border-bottom: 1px dotted #94a3b8;">Темы гранта</span> ·
+                            <span style="border-bottom: 1px dotted #94a3b8;">ИИ-тьютор по физике</span> ·
+                            <span style="border-bottom: 1px dotted #94a3b8;">Субъектность</span> ·
+                            <span style="border-bottom: 1px dotted #94a3b8;">Эксперимент</span>
                         </p>
                     </div>
                 </a>
 
                 <!-- Плашка 4: Выгоды и перспективы -->
-                <a href="#slide12" style="text-decoration: none; color: inherit;">
-                    <div class="tile"
-                        style="cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; border-left: 5px solid #16a34a; min-height: 230px;"
-                        onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.08)';"
-                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.03)';">
-                        <div class="icon-wrap">
-                            <div class="icon" style="color: #16a34a; background: #f0fdf4;"><i
-                                    class="fa-solid fa-trophy"></i></div>
-                            <h3 style="color: #16a34a;">Выгоды и перспективы</h3>
+                <a href="#slide12" style="text-decoration: none; color: inherit; display: flex;">
+                    <div style="cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; border-left: 5px solid #16a34a; background: white; border-radius: 16px; padding: 24px 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); width: 100%;"
+                        onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 25px rgba(0,0,0,0.08)';"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.04)';">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                            <div
+                                style="width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #16a34a; background: #f0fdf4; font-size: 18px; flex-shrink: 0;">
+                                <i class="fa-solid fa-trophy"></i></div>
+                            <h3 style="color: #16a34a; margin: 0; font-size: 20px;">Выгоды и перспективы</h3>
                         </div>
-                        <p style="font-size: 14px; line-height: 1.6; color: #64748b;">
-                            <a href="#slide12"
-                                style="color: #64748b; text-decoration: none; border-bottom: 1px dotted #94a3b8;">План
-                                реализации</a> ·
-                            <a href="#slide14"
-                                style="color: #64748b; text-decoration: none; border-bottom: 1px dotted #94a3b8;">Ожидаемые
-                                результаты</a> ·
-                            <a href="#slide15"
-                                style="color: #64748b; text-decoration: none; border-bottom: 1px dotted #94a3b8;">Бюджет</a>
-                            ·
-                            <a href="#slide16"
-                                style="color: #64748b; text-decoration: none; border-bottom: 1px dotted #94a3b8;">Заключение</a>
+                        <p style="font-size: 13px; line-height: 1.6; color: #64748b; margin: 0;">
+                            <span style="border-bottom: 1px dotted #94a3b8;">План реализации</span> ·
+                            <span style="border-bottom: 1px dotted #94a3b8;">Результаты</span> ·
+                            <span style="border-bottom: 1px dotted #94a3b8;">Бюджет</span> ·
+                            <span style="border-bottom: 1px dotted #94a3b8;">Заключение</span>
                         </p>
                     </div>
                 </a>
