@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гимназия В.В. Давыдова — ИИ в образовании | Презентация</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ═══════════════════════════════════════
+           1. RESET & CORE
+           ═══════════════════════════════════════ */
+        * {
+            box-sizing: border-box;
+        }
+
+        p,
+        ul,
+        h1,
+        h2,
+        h3,
+        h4 {
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            margin-bottom: 14px;
+        }
+
+        body {
+            background-color: #e2e8f0;
+            display: grid;
+            gap: 40px;
+            place-items: center;
+            margin: 0;
+            min-height: 100vh;
+            padding: 40px 0;
+        }
+
+        /* ═══════════════════════════════════════
+           2. SLIDE CONTAINER
+           ═══════════════════════════════════════ */
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            background-color: #fdfdfc;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+            font-family: 'Roboto', sans-serif;
+            color: #334155;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slide-container>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            width: 100%;
+            justify-content: flex-start;
+        }
+
+        /* Background blobs */
+        .bg-blob {
+            position: absolute;
+            filter: blur(100px);
+            z-index: 0;
+            opacity: 0.35;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .blob-blue {
+            top: -150px;
+            left: -150px;
+            width: 600px;
+            height: 600px;
+            background: #e0f2fe;
+        }
+
+        .blob-orange {
+            bottom: -150px;
+            right: -150px;
+            width: 500px;
+            height: 500px;
+            background: #ffedd5;
+        }
+
+        /* ═══════════════════════════════════════
+           3. HEADER & FOOTER ELEMENTS
+           ═══════════════════════════════════════ */
+        .logos-header {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            z-index: 10;
+        }
+
+        .logos-header .logo-box {
+            height: 64px;
+            padding: 0 24px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            color: #0f172a;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            font-size: 16px;
+        }
+
+        .block-marker {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #94a3b8;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            z-index: 10;
+        }
+
+        /* ═══════════════════════════════════════
+           4. TYPOGRAPHY
+           ═══════════════════════════════════════ */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Inter', sans-serif;
+            color: #0f172a;
+        }
+
+        h1 {
+            font-size: 64px;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 14px;
+            color: #0284c7;
+        }
+
+        p,
+        li {
+            font-size: 19px;
+            line-height: 1.5;
+            color: #475569;
+        }
+
+        .slide-title {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #0f172a;
+            width: 100%;
+            text-align: left;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: #64748b;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .note-link {
+            font-size: 14px;
+            color: #64748b;
+            font-style: italic;
+            margin-top: 8px;
+            word-break: break-all;
+        }
+
+        /* ═══════════════════════════════════════
+           5. LAYOUTS
+           ═══════════════════════════════════════ */
+
+        /* Title slide */
+        .title-layout {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            align-items: center;
+            text-align: center;
+            padding: 0 40px;
+        }
+
+        /* Two columns */
+        .two-column {
+            display: flex;
+            gap: 40px;
+            width: 100%;
+            align-items: flex-start;
+        }
+
+        .two-column>div {
+            flex: 1;
+        }
+
+        .two-column.cards {
+            align-items: stretch;
+            height: 100%;
+        }
+
+        .two-column.cards>div {
+            background-color: #ffffff;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .two-column.cards h3 {
+            font-size: 26px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        /* Bleed image layout */
+        .slide-container.bleed-image-layout {
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0;
+            align-items: start;
+        }
+
+        .slide-container.bleed-image-layout>.content-container {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 720px;
+            position: relative;
+        }
+
+        .slide-container.bleed-image-layout>.image-container {
+            height: 720px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slide-container.bleed-image-layout img.bleed-image-side {
+            width: 100%;
+            height: 720px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        /* Image wrapper */
+        .image-wrapper {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            width: 100%;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Tiled images */
+        .tiled-images-layout {
+            display: flex;
+            gap: 24px;
+            width: 100%;
+        }
+
+        .image-tile {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid #f1f5f9;
+        }
+
+        .image-tile .image-wrapper {
+            height: 260px;
+            width: 100%;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        .image-tile p {
+            padding: 20px;
+            font-size: 17px;
+            text-align: center;
+            margin: 0;
+            font-weight: 500;
+            color: #0f172a;
+            line-height: 1.4;
+        }
+
+        /* Rounded image */
+        .rounded-image-layout {
+            align-items: center;
+        }
+
+        .rounded-image-layout .image-wrapper {
+            border-radius: 50%;
+            height: 420px;
+            width: 420px;
+            margin: 0 auto;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .rounded-image-layout p {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        /* ═══════════════════════════════════════
+           6. CARD TILES & GRIDS
+           ═══════════════════════════════════════ */
+        .tiled-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            width: 100%;
+        }
+
+        .tiled-content.three-cols {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .tile {
+            background-color: #ffffff;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            align-items: flex-start;
+        }
+
+        .tile .icon-wrap {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .tile .icon {
+            color: #0284c7;
+            font-size: 26px;
+            height: 48px;
+            width: 48px;
+            background: #f0f9ff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+        }
+
+        .tile h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+            color: #0f172a;
+        }
+
+        .tile p {
+            font-size: 17px;
+            line-height: 1.4;
+            color: #475569;
+            margin: 0;
+        }
+
+        .five-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .five-grid .tile {
+            width: calc(33.333% - 14px);
+        }
+
+        .five-grid .tile.wide {
+            width: calc(50% - 10px);
+        }
+
+        /* ═══════════════════════════════════════
+           7. BULLET LISTS
+           ═══════════════════════════════════════ */
+        .bullet-list {
+            width: 100%;
+        }
+
+        .bullet-list ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .bullet-list.two-col-list ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .bullet-list li {
+            position: relative;
+            font-size: 19px;
+            background: #ffffff;
+            padding: 20px 20px 20px 64px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            border: 1px solid #f1f5f9;
+        }
+
+        .bullet-list i {
+            position: absolute;
+            left: 20px;
+            top: 22px;
+            color: #0284c7;
+            font-size: 24px;
+        }
+
+        .bullet-list li strong {
+            color: #0f172a;
+        }
+
+        .clean-list {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .clean-list li {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        /* ═══════════════════════════════════════
+           8. SPECIAL BLOCKS
+           ═══════════════════════════════════════ */
+
+        /* Highlight / Quote */
+        .highlight-layout {
+            margin: auto;
+            text-align: center;
+            max-width: 950px;
+            background: #ffffff;
+            padding: 50px 70px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .highlight-layout h2 {
+            font-size: 40px;
+            color: #0f172a;
+            margin-bottom: 24px;
+        }
+
+        .highlight-layout p {
+            font-size: 24px;
+            font-weight: 500;
+            color: #334155;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Comparison columns */
+        .comparison-layout {
+            display: flex;
+            gap: 40px;
+            width: 100%;
+            height: 100%;
+            align-items: stretch;
+        }
+
+        .comparison-col {
+            flex: 1;
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.02);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .comparison-col::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+        }
+
+        .comparison-col:nth-child(1)::before {
+            background: #ea580c;
+        }
+
+        .comparison-col:nth-child(2)::before {
+            background: #0284c7;
+        }
+
+        .comparison-col h3 {
+            font-size: 32px;
+            color: #0f172a;
+            margin-bottom: 24px;
+        }
+
+        .comparison-col p,
+        .comparison-col li {
+            font-size: 19px;
+        }
+
+        /* Budget bars */
+        .budget-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .budget-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .budget-label {
+            width: 250px;
+            font-weight: 600;
+            color: #0f172a;
+            font-size: 18px;
+            text-align: right;
+        }
+
+        .budget-track {
+            flex-grow: 1;
+            background: #f1f5f9;
+            border-radius: 20px;
+            height: 36px;
+            overflow: hidden;
+        }
+
+        .budget-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #38bdf8, #0284c7);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 16px;
+            color: white;
+            font-weight: 800;
+            font-size: 16px;
+            border-radius: 20px;
+        }
+
+        /* Q&A */
+        .qa-layout {
+            text-align: center;
+            margin: auto;
+        }
+
+        .qa-layout h2 {
+            font-size: 64px;
+            color: #0f172a;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .qa-layout p {
+            font-size: 26px;
+            color: #475569;
+            margin-bottom: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.4;
+        }
+
+        .qa-layout .contact-info {
+            font-size: 22px;
+            color: #ea580c;
+            font-weight: 600;
+            padding: 20px 40px;
+            background: #fff7ed;
+            border-radius: 50px;
+            display: inline-block;
+            border: 1px solid #fed7aa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════════
+     СЛАЙД 1 — ТИТУЛЬНЫЙ
+     ═══════════════════════════════════════════════ -->
+    <div class="slide-container" id="slide1">
+        <div class="logos-header">
+            <div class="logo-box">
+                <img src="logo.png" alt="Гимназия В.В. Давыдова"
+                    style="height: 44px; width: auto; object-fit: contain;">
+            </div>
+            <div class="logo-box">
+                <img src="https://static.tildacdn.com/tild6631-6434-4632-b561-623636613439/Logo_Text-Ready-DARK.svg"
+                    alt="Фонд «Лаборатория Будущего»" style="height: 32px; width: auto; object-fit: contain;">
+            </div>
+        </div>
+        <div class="bg-blob blob-blue"></div>
+        <div class="bg-blob blob-orange"></div>
+        <div class="title-layout">
+            <h1>Выбор проекта на президентский грант 2026 г.</h1>
+            <p class="subtitle" style="font-size: 22px; font-weight: 600; color: #334155; margin-top: 10px;">Участие
+                гимназии в федеральных программах применения нейросетей в учебном процессе</p>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+     СЛАЙД 2 — ОСНОВНЫЕ ПОНЯТИЯ
+     ═══════════════════════════════════════════════ -->
+    <div class="slide-container" id="slide2">
+        <div class="bg-blob blob-blue"></div>
+        <h2 class="slide-title">Основные понятия</h2>
+        <div class="content-area">
+            <div class="five-grid">
+                <div class="tile wide">
+                    <div class="icon-wrap">
+                        <div class="icon"><i class="fa-solid fa-robot"></i></div>
+                        <h3>Внедрение ИИ</h3>
+                    </div>
+                    <p>Повсеместная автоматизация информационных процессов: планирование уроков, проверка работ,
+                        генерация материалов, мониторинг прогресса.</p>
+                    <div class="note-link">digital.gov.ru/target/naczionalnyj-proekt-ekonomika-dannyh/</div>
+                </div>
+                <div class="tile wide">
+                    <div class="icon-wrap">
+                        <div class="icon"><i class="fa-solid fa-route"></i></div>
+                        <h3>Персональная траектория</h3>
+                    </div>
+                    <p>Индивидуальный путь обучения, который ИИ строит под темп, стиль мышления и интересы ребёнка.</p>
+                </div>
+                <div class="tile">
+                    <div class="icon-wrap">
+                        <div class="icon"><i class="fa-solid fa-brain"></i></div>
+                        <h3>Развивающее обучение</h3>
+                    </div>
+                    <p>Методика Эльконина — Давыдова. Фокус на формировании теоретического мышления и субъектности.</p>
+                </div>
+                <div class="tile">
+                    <div class="icon-wrap">
+                        <div class="icon"><i class="fa-solid fa-chart-pie"></i></div>
+                        <h3>Data-driven управление</h3>
+                    </div>
+                    <p>Все решения принимаются по реальным цифрам. ИИ показывает пробелы класса/ученика и предлагает
+                        решения.</p>
+                </div>
+                <div class="tile">
+                    <div class="icon-wrap">
+                        <div class="icon"><i class="fa-solid fa-network-wired"></i></div>
+                        <h3>Цифровая среда</h3>
+                    </div>
+                    <p>Единая экосистема платформ и сервисов государства для школ, учителей, родителей и учеников.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+     СЛАЙД 3 — КАК ИИ МЕНЯЕТ ОБРАЗОВАНИЕ
+     ═══════════════════════════════════════════════ -->
+    <div class="slide-container" id="slide3">
+        <div class="bg-blob blob-orange"></div>
+        <h2 class="slide-title">Как ИИ меняет образование в России</h2>
+        <div class="block-marker">Блок 1</div>
+        <div class="content-area">
+            <p style="font-size: 22px; font-weight: 600; color: #0f172a; margin-bottom: 30px;">
+                Государство делает ИИ главным инструментом обновления школ.<br>
+                Цель — персональное обучение, развитие талантов каждого ребёнка и подготовка к будущему
+                (Указ Президента № 309 от 07.05.2024).
+            </p>
+            <div class="two-column cards">
+                <div>
+                    <h3>1. Поручения Президента</h3>
+                    <ul class="clean-list">
+                        <li><strong>Национальная стратегия развития ИИ до 2030 года</strong></li>
+                        <li>Поручения 2025–2026 годов: включить ИИ в ФГОС, запустить пилотные проекты в школах, обучить
+                            учителей</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>2. Утверждённые госпрограммы</h3>
+                    <ul class="clean-list">
+                        <li><strong>Федеральный проект «Искусственный интеллект»</strong> — 80 % школ с российскими
+                            нейросетями к 2030 году</li>
+                        <li><strong>Нацпроект «Экономика данных»</strong> — высокоскоростной интернет в 97 %
+                            домохозяйств к 2030 году</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+     СЛАЙД 4 — ИНСТРУМЕНТЫ ИИ
+     ═══════════════════════════════════════════════ -->
+    <div class="slide-container" id="slide4">
+        <div class="bg-blob blob-blue"></div>
+        <h2 class="slide-title">Инструменты ИИ: что работает и перспективы</h2>
+        <div class="block-marker">Блок 1</div>
+        <div class="content-area">
+            <div class="two-column cards">
+                <div>
+                    <h3>3. Что уже работает</h3>
+                    <ul class="clean-list">
+                        <li>«Код будущего» и «Урок цифры» (более 15 млн школьников в год)</li>
+                        <li>Курс «Введение в ИИ» с сентября 2026 года</li>
+                        <li>Более 42 000 учителей обучены работе с ИИ</li>
+                        <li><strong>«Моя школа» + «Цифровой помощник учителя»</strong> — автоматизирует 50 %+ проверки
+                            ДЗ и 100 % планирования</li>
+                        <li>ИИ-учебники Lecta/Просвещение и адаптивные тьюторы</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>4. Готовые инструменты и будущее</h3>
+                    <ul class="clean-list">
+                        <li>Умное планирование расписания и анализ прогресса</li>
+                        <li>ИИ-ассистенты дают персональные задания и проверяют работы</li>
+                        <li>Чат-боты помогают 24/7</li>
+                        <li style="margin-top: 15px; color: #0284c7; font-weight: 600;">В ближайшие 3–5 лет:</li>
+                        <li>ИИ-тьютор подстраивается под стиль мышления ребёнка</li>
+                        <li>Генерация уроков и материалов за секунды</li>
+                        <li>Виртуальные лаборатории и симуляции</li>
+                        <li>Нейроинтерфейсы для отслеживания нагрузки</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+     СЛАЙД 5 — ГИМНАЗИЯ В 2035 (визуализация)
+     ═══════════════════════════════════════════════ -->
+    <div class="slide-container bleed-image-layout" id="slide5">
+        <div class="content-container">
+            <h2 class="slide-title">Гимназия Давыдова в 2035 году</h2>
+            <div class="content-area">
+                <ul class="clean-list" style="margin-top: 20px;">
+                    <li>Полностью автоматизированные рутинные процессы (90 % задач).</li>
+                    <li>У каждого ученика — своя образовательная траектория.</li>
+                    <li>Учителя — только наставники и кураторы.</li>
+                    <li>Школа использует гибкие форматы обучения и управление на основе данных.</li>
+                    <li>ИИ помогает развивать мышление, а не заменяет учителя.</li>
+                </ul>
+            </div>
+            <div class="block-marker" style="bottom: 30px; right: auto; left: 60px;">Блок 1</div>
+        </div>
+        <div class="image-container">
+            <img class="bleed-image-side" src="bubble_2035.png" alt="Инфографика: Система образования России 2035">
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+     СЛАЙД 6 — ГИМНАЗИЯ СЕГОДНЯ (2026)
+     ═══════════════════════════════════════════════ -->
+    <div class="slide-container" id="slide6">
+        <div class="bg-blob blob-orange"></div>
+        <h2 class="slide-title">Гимназия Давыдова сегодня (2026)</h2>
+        <div class="block-marker">Блок 2</div>
+        <div class="content-area">
+            <div class="two-column cards">
+                <div>
+                    <h3>Текущее состояние</h3>
+                    <ul class="clean-list">
+                        <li><strong>База:</strong> 190–200 учеников 1–11 классов. Старое здание, ограниченные ресурсы.
+                        </li>
+                        <li><strong>Сильная сторона:</strong> взращивание мышления и субъектности (методика Эльконина —
+                            Давыдова).</li>
+                        <li><strong>Что есть:</strong> приложение «Дневник старшеклассника», наставничество, языковые
+                            лагеря.</li>
+                        <li><strong>Слабые звенья:</strong> финансирование от родителей, нет автоматизации, нет
+                            мониторинга ресурсов.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Реалистичные решения</h3>
+                    <ul class="clean-list">
+                        <li>Переход на грантовую систему (как центр передовых компетенций).</li>
+                        <li>Региональные льготы за счёт статуса лидера цифровых практик.</li>
+                        <li>Возможный переход на модель самоуправления (как образовательные кооперативы) для сохранения
+                            независимой позиции.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+     СЛАЙД 7 — ГИМНАЗИЯ В 2035 (три направления)
+     ═══════════════════════════════════════════════ -->
+    <div class="slide-container" id="slide7">
+        <div class="bg-blob blob-blue"></div>
+        <h2 class="slide-title">Гимназия Давыдова в 2035 году</h2>
+        <div class="block-marker">Блок 2</div>
+        <div class="content-area">
+            <div class="tiled-content three-cols">
+                <div class="tile">
+                    <div class="icon-wrap">
+                        <div class="icon"><i class="fa-solid fa-building"></i></div>
+                    </div>
+                    <h3>Новое здание</h3>
+                    <p>300 учеников. Полностью автоматизированные индивидуальные программы.</p>
+                </div>
+                <div class="tile">
+                    <div class="icon-wrap">
+                        <div class="icon"><i class="fa-solid fa-landmark"></i></div>
+                    </div>
+                    <h3>ИИ-музей Давыдова</h3>
+                    <p>90 % рутины на ИИ. ИИ-помощники. Интерактивный архив идей и участник научных мероприятий.</p>
+                </div>
+                <div class="tile">
+                    <div class="icon-wrap">
+                        <div class="icon"><i class="fa-solid fa-seedling"></i></div>
+                    </div>
+                    <h3>Хаб развития</h3>
+                    <p>«Лаборатория Вертикального Развития» — софт скиллс, йога, mindfulness, создание смыслов.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+     СЛАЙД 8 — БЛОК 2.5 (ПРОДОЛЖЕНИЕ)
+     ═══════════════════════════════════════════════ -->
+    <div class="slide-container" id="slide8">
+        <div class="bg-blob blob-orange"></div>
+        <h2 class="slide-title">Гимназия Давыдова 2035. Продолжение</h2>
+        <div class="block-marker">Блок 2.5</div>
+        <div class="content-area">
+            <p style="font-size: 22px; font-weight: 600; color: #0f172a; margin-bottom: 25px;">
+                Гимназия превращается в производителя инновационных образовательных продуктов и сервисов на 10–15 лет
+                вперёд.
+            </p>
+            <div class="two-column cards">
+                <div>
+                    <h3>Конкурентные преимущества</h3>
+                    <ul class="clean-list">
+                        <li>35 лет уникального опыта развивающего обучения (теоретическое мышление, рефлексия,
+                            субъектность)</li>
+                        <li>Готовность создавать «Давыдов 2.0» с ИИ — методики, которых нет ни у кого</li>
+                    </ul>
+                    <h3
+                        style="margin-top: 30px; border-top: 2px solid #f1f5f9; border-bottom: none; padding-top: 20px;">
+                        Результат</h3>
+                    <p style="font-weight: 500;">Федеральный центр производства инноваций: авторские ИИ-модули, открытые
+                        методики, виртуальные лаборатории. Школа не только учит — она создаёт будущее образование.</p>
+                </div>
+                <div>
+                    <h3>Какие дефициты закрываем (НТИ)</h3>
+                    <ul class="clean-list">
+                        <li>Производство верифицированных методик и смыслов для ИИ-образования</li>
+                        <li>Разработка персональных траекторий и «учебных противоречий»</li>
+                        <li>Создание ИИ-инструментов для проектного обучения и творчества</li>
+                        <li>Подготовка кадров для рынков НТИ: EduNet, NeuroNet, TechnoNet</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+     СЛАЙД 9 — ПОЧЕМУ ГРАНТ
+     ═══════════════════════════════════════════════ -->
+    <div class="slide-container" id="slide9">
+        <div class="bg-blob blob-blue"></div>
+        <div class="block-marker">Блок 3</div>
+        <div class="content-area" style="justify-content: center;">
+            <div class="highlight-layout">
+                <h2>Почему мы подаёмся на грант Президента</h2>
+                <p>Грант даст возможность перейти в более устойчивое финансовое и организационное положение. Мы станем
+                    центром передовых компетенций — надёжным партнёром государства и региона, сохраняя при этом
+                    управленческую свободу и независимую позицию.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+     СЛАЙД 10 — ЦЕЛИ ПРОЕКТА
+     ═══════════════════════════════════════════════ -->
+    <div class="slide-container" id="slide10">
+        <div class="bg-blob blob-orange"></div>
+        <h2 class="slide-title">Цели проекта (на 2 года)</h2>
+        <div class="block-marker">Блок 4</div>
+        <div class="content-area">
+            <div class="bullet-list two-col-list">
+                <ul>
+                    <li><i class="fa-solid fa-flag"></i> Внедрить нейросети в ежедневный учебный процесс</li>
+                    <li><i class="fa-solid fa-flag"></i> Подготовить всех учителей к работе с ИИ-инструментами</li>
+                    <li><i class="fa-solid fa-flag"></i> Создать авторский контент гимназии на базе нейросетей</li>
+                    <li><i class="fa-solid fa-flag"></i> Построить систему персональных образовательных траекторий</li>
+                    <li><i class="fa-solid fa-flag"></i> Сделать гимназию площадкой федерального уровня по ИИ в
+                        развивающем обучении</li>
+                    <li><i class="fa-solid fa-flag"></i> Внедрить ИИ-консультанта каждому учителю и администратору</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+     СЛАЙД 11 — КЛЮЧЕВЫЕ НАПРАВЛЕНИЯ
+     ═══════════════════════════════════════════════ -->
+    <div class="slide-container" id="slide11">
+        <div class="bg-blob blob-blue"></div>
+        <h2 class="slide-title">Ключевые направления работы</h2>
+        <div class="block-marker">Блок 5</div>
+        <div class="content-area">
+            <div class="tiled-content three-cols">
+                <div class="tile">
+                    <div class="icon-wrap">
+                        <div class="icon"><i class="fa-solid fa-user-graduate"></i></div>
+                    </div>
+                    <h3>Персональные траектории</h3>
+                    <p>Для каждого ученика индивидуально.</p>
+                </div>
+                <div class="tile">
+                    <div class="icon-wrap">
+                        <div class="icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    </div>
+                    <h3>Генерация контента</h3>
+                    <p>Автоматическая генерация и адаптация материалов.</p>
+                </div>
+                <div class="tile">
+                    <div class="icon-wrap">
+                        <div class="icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                    </div>
+                    <h3>ИИ-помощник учителя</h3>
+                    <p>Планирование, проверка, аналитика.</p>
+                </div>
+                <div class="tile">
+                    <div class="icon-wrap">
+                        <div class="icon"><i class="fa-solid fa-flask"></i></div>
+                    </div>
+                    <h3>Виртуальные проекты</h3>
+                    <p>Лаборатории и проекты с нейросетями.</p>
+                </div>
+                <div class="tile">
+                    <div class="icon-wrap">
+                        <div class="icon"><i class="fa-solid fa-people-roof"></i></div>
+                    </div>
+                    <h3>Цифровой портал</h3>
+                    <p>Обучение родителей + единый портал.</p>
+                </div>
+                <div class="tile">
+                    <div class="icon-wrap">
+                        <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    </div>
+                    <h3>Безопасность</h3>
+                    <p>Мониторинг безопасности и этики ИИ.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+     СЛАЙД 12 — ПЛАН РЕАЛИЗАЦИИ
+     ═══════════════════════════════════════════════ -->
+    <div class="slide-container" id="slide12">
+        <div class="bg-blob blob-orange"></div>
+        <h2 class="slide-title">План реализации (2026–2027)</h2>
+        <div class="block-marker">Блок 6</div>
+        <div class="content-area">
+            <div class="two-column cards">
+                <div>
+                    <h3 style="font-size: 32px; color: #ea580c; border-bottom: none;">
+                        <i class="fa-regular fa-calendar" style="margin-right: 10px;"></i> 2026 год
+                    </h3>
+                    <ul class="clean-list" style="margin-top: 10px;">
+                        <li>Обучение всех педагогов (2 этапа)</li>
+                        <li>Покупка оборудования + лицензий российских нейросетей</li>
+                        <li>Создание первых 15 авторских ИИ-модулей</li>
+                        <li>Пилот в 5–9 классах</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="font-size: 32px; color: #0284c7; border-bottom: none;">
+                        <i class="fa-regular fa-calendar-check" style="margin-right: 10px;"></i> 2027 год
+                    </h3>
+                    <ul class="clean-list" style="margin-top: 10px;">
+                        <li>Полное внедрение во все классы</li>
+                        <li>Открытые мастер-классы и семинары для других школ</li>
+                        <li>Публикация методичек</li>
+                        <li>Участие в федеральных конференциях</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+     СЛАЙД 13 — НАГРУЗКА НА АДМИНИСТРАЦИЮ
+     ═══════════════════════════════════════════════ -->
+    <div class="slide-container" id="slide13">
+        <div class="bg-blob blob-blue"></div>
+        <h2 class="slide-title">Нагрузка на администрацию и учителей</h2>
+        <div class="block-marker">Блок 6.5</div>
+        <div class="content-area">
+            <div class="comparison-layout">
+                <div class="comparison-col">
+                    <h3>2026 год (переходный)</h3>
+                    <ul class="clean-list">
+                        <li><strong>Дополнительная нагрузка:</strong> обучение педагогов, настройка инструментов,
+                            создание первых 15 модулей, пилот в 5–9 классах.</li>
+                        <li style="margin-top: 15px;"><strong>Ежедневные задачи:</strong> параллельно обычные уроки +
+                            работа с ИИ-ассистентами.</li>
+                        <li style="margin-top: 15px;"><strong>Поддержка:</strong> внешние эксперты и грантовые средства
+                            снимают часть рутины.</li>
+                        <li style="margin-top: 15px; color: #ea580c; font-weight: 600;">Результат: к концу года —
+                            автоматизация 40–50 % процессов.</li>
+                    </ul>
+                </div>
+                <div class="comparison-col">
+                    <h3>2027 год (полное внедрение)</h3>
+                    <ul class="clean-list">
+                        <li>Полное внедрение в образовательный процесс.</li>
+                        <li style="margin-top: 15px;">Рутина уходит на ИИ (проверка, планирование, отчёты).</li>
+                        <li style="margin-top: 15px;">Учителя возвращаются к наставничеству и творчеству.</li>
+                        <li style="margin-top: 15px; color: #0284c7; font-weight: 600;">Результат: общая нагрузка ниже,
+                            чем сегодня.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+     СЛАЙД 14 — ОЖИДАЕМЫЕ РЕЗУЛЬТАТЫ
+     ═══════════════════════════════════════════════ -->
+    <div class="slide-container" id="slide14">
+        <div class="bg-blob blob-orange"></div>
+        <h2 class="slide-title">Ожидаемые результаты</h2>
+        <div class="block-marker">Блок 7</div>
+        <div class="content-area">
+            <div class="bullet-list two-col-list">
+                <ul>
+                    <li><i class="fa-solid fa-check-circle" style="color: #16a34a;"></i> 100 % учителей уверенно
+                        работают с нейросетями</li>
+                    <li><i class="fa-solid fa-check-circle" style="color: #16a34a;"></i> 100 % учеников имеют
+                        персональную ИИ-траекторию</li>
+                    <li><i class="fa-solid fa-check-circle" style="color: #16a34a;"></i> Рост качества обучения на 25–30
+                        %</li>
+                    <li><i class="fa-solid fa-check-circle" style="color: #16a34a;"></i> Создано 40+ авторских цифровых
+                        продуктов</li>
+                    <li><i class="fa-solid fa-check-circle" style="color: #16a34a;"></i> Гимназия — федеральная площадка
+                        по ИИ в развивающем образовании</li>
+                    <li><i class="fa-solid fa-check-circle" style="color: #16a34a;"></i> Опыт готов к тиражированию</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+     СЛАЙД 15 — БЮДЖЕТ
+     ═══════════════════════════════════════════════ -->
+    <div class="slide-container" id="slide15">
+        <div class="bg-blob blob-blue"></div>
+        <h2 class="slide-title">Бюджет гранта</h2>
+        <div class="block-marker">Блок 8</div>
+        <div class="content-area">
+            <div class="budget-bars">
+                <div class="budget-bar-item">
+                    <div class="budget-label">Оборудование и ПО</div>
+                    <div class="budget-track">
+                        <div class="budget-fill" style="width: 40%;">40%</div>
+                    </div>
+                </div>
+                <div class="budget-bar-item">
+                    <div class="budget-label">Обучение и эксперты</div>
+                    <div class="budget-track">
+                        <div class="budget-fill"
+                            style="width: 25%; background: linear-gradient(90deg, #60a5fa, #2563eb);">25%</div>
+                    </div>
+                </div>
+                <div class="budget-bar-item">
+                    <div class="budget-label">Разработка контента</div>
+                    <div class="budget-track">
+                        <div class="budget-fill"
+                            style="width: 20%; background: linear-gradient(90deg, #93c5fd, #3b82f6);">20%</div>
+                    </div>
+                </div>
+                <div class="budget-bar-item">
+                    <div class="budget-label">Мониторинг и отчётность</div>
+                    <div class="budget-track">
+                        <div class="budget-fill"
+                            style="width: 10%; background: linear-gradient(90deg, #bfdbfe, #60a5fa);">10%</div>
+                    </div>
+                </div>
+                <div class="budget-bar-item">
+                    <div class="budget-label">Резерв и продвижение</div>
+                    <div class="budget-track">
+                        <div class="budget-fill"
+                            style="width: 5%; background: linear-gradient(90deg, #dbeafe, #93c5fd); color: #0f172a;">5%
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="highlight-layout" style="padding: 25px; margin-top: 40px; border-radius: 16px;">
+                <p style="font-size: 22px; color: #0284c7; margin: 0;">
+                    <i class="fa-solid fa-shield-halved"></i> Все средства идут только на проект.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+     СЛАЙД 16 — ЗАКЛЮЧЕНИЕ
+     ═══════════════════════════════════════════════ -->
+    <div class="slide-container" id="slide16">
+        <div class="bg-blob blob-orange"></div>
+        <h2 class="slide-title">Сохраняя главную ценность</h2>
+        <div class="block-marker">Заключение</div>
+        <div class="content-area">
+            <div class="two-column cards">
+                <div>
+                    <p style="font-size: 20px; line-height: 1.6;">Мы уже 35 лет растим детей, которые думают
+                        самостоятельно, а не просто запоминают. Грант — это инструмент, чтобы сделать школу устойчивее:
+                        меньше зависеть от родительских платежей, особенно когда вокруг экономическая неопределённость.
+                    </p>
+                    <p style="font-size: 20px; line-height: 1.6;">Мы понимаем риски: лишняя бюрократия, перегрузка
+                        людей, потеря свободы в решениях. Поэтому будем двигаться осторожно — сохраняя независимость,
+                        управленческую гибкость и нашу главную ценность: живое общение и развитие внутреннего потенциала
+                        каждого ребёнка.</p>
+                </div>
+                <div style="display: flex; align-items: center; justify-content: center;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 80px; margin-bottom: 20px;">🌱</div>
+                        <p style="font-size: 22px; font-weight: 600; color: #0f172a; margin: 0;">Живое
+                            общение.<br>Развитие потенциала.<br>Независимость.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+     СЛАЙД 17 — ФИНАЛЬНЫЙ
+     ═══════════════════════════════════════════════ -->
+    <div class="slide-container" id="slide17">
+        <div class="bg-blob blob-blue"></div>
+        <div class="qa-layout">
+            <h2>Готовы к будущему</h2>
+            <p>Если всё сделать правильно, гимназия станет крепче, родители получат уверенность в будущем своих детей, а
+                мы — пространство для настоящего творчества и роста.</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
